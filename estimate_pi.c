@@ -6,7 +6,8 @@
 
 #define SEED 35791246
 
-int main(int argc, char **argv) {
+int main(int argc, char **argv)
+{
     // number of iterations requested (no error checking)
     int niter = atoi(argv[1]);
 
