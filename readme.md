@@ -48,7 +48,20 @@ for loop via OpenMP. We suggest either
 * Performing a reduction operation
 * Performing independent work and averaging Pi estimates between threads
 
-You only need to try one approach, but we recommend trying both! 
+You only need to try one approach, but we recommend trying both! The code is separated 
+into two chunks. The first chunk creates a buffer and fills it with random numbers. 
+The second chunk loops over that buffer and calculates our estimate of pi. We want 
+you to parallelize both chunks; each thread should have its *own* private buffer 
+and loop over that private buffer. 
+
+# Random Number Generation
+
+Efficient and accurate parallel random number generators are not provided in the C 
+standard libraries (the default ones are either not thread safe, inaccurate, or both!). 
+Consequently, we use Intel's random number streams provided in MKL as our random number 
+generators, as they are thread safe and accurate. We have already provided the logic 
+for generating thread-private random number streams, so that you do not need to worry 
+about dealing with random number generation yourself. 
 
 
 # Tips and Hints
