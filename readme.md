@@ -61,7 +61,12 @@ standard libraries (the default ones are either not thread safe, inaccurate, or 
 Consequently, we use Intel's random number streams provided in MKL as our random number 
 generators, as they are thread safe and accurate. We have already provided the logic 
 for generating thread-private random number streams, so that you do not need to worry 
-about dealing with random number generation yourself. 
+about dealing with random number generation yourself. For those needing further help, 
+Intel has provided [documentation](https://software.intel.com/en-us/node/590372) on
+how to get independent random number streams; you will want one stream per OpenMP thread. 
+For those curious on Intel's implementation details, see their 
+[implementation guide](https://software.intel.com/en-us/articles/intel-digital-random-number-generator-drng-software-implementation-guide)
+for more details.
 
 
 # Tips and Hints
