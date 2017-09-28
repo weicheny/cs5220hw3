@@ -28,8 +28,8 @@ int main(int argc, char **argv)
    int i,j;
    for(j = 0; j < niter; j+=batchsize)
    {
-      vsRngUniform( VSL_RNG_METHOD_UNIFORM_STD, stream, niter, rand_buffer_x, 0.0, 1.0 );
-      vsRngUniform( VSL_RNG_METHOD_UNIFORM_STD, stream, niter, rand_buffer_y, 0.0, 1.0 );
+      vsRngUniform( VSL_RNG_METHOD_UNIFORM_STD, stream, batchsize, rand_buffer_x, 0.0, 1.0 );
+      vsRngUniform( VSL_RNG_METHOD_UNIFORM_STD, stream, batchsize, rand_buffer_y, 0.0, 1.0 );
       for(i = 0; i < batchsize; i++)
       {
          float z = rand_buffer_y[i]*rand_buffer_y[i] + rand_buffer_x[i]*rand_buffer_x[i];
